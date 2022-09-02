@@ -1,0 +1,29 @@
+● How is memory managed in C++ ?
+Each program has a stack, heap and static memory areas. Stack is needed when objects are created directly inside of functions, stack is relatively small (8mb standard size). Everything created with a "new" operator goes to heap, heap is a large storage. And the static area contains static variables.
+
+● What is polymorphism ? Types of polymorphism ?
+Polymorphism is the ability of an object to have different behaviour in different situations.
+Compile time polymorphism is created by functions overloading, runtime polymorphism is created by virtual functions.
+
+● What is a friend function ?
+A friend function is a function declared outside of a class, but is able to access private fields of this class.
+
+● What is multithreading ?
+Multithreading is execution of program more than in a single execution thread.
+
+● How can one optimise an C++ program ?
+Run program with performance evaluation and find weak spots (function calls which take significant amount of time, or called too often)
+Review data structures, avoid excess data, avoid unnecessary data copiyng. Make data ownership clear (using unique_ptr).
+Review algorithms - make them more optimized (example O(n ^ 2) remake with O(n log n) algorithm). 
+Review network interactions - review data and frequency of network messages.
+Move heavy logic to separate threads if possible.
+
+● What is the diamond problem ?
+Diamond is a situation where we have the following inheritance case (or more complex but with the same idea)
+     A
+	/ \
+   B   C 
+    \ /
+	 D
+	 
+In this situation with simple inheritance when we create object D we would have two copies of data of A class. It may be resolved by virtual inheritance.
